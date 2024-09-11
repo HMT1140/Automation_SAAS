@@ -10,17 +10,9 @@ export const InfiniteMovingCards = ({
   speed = 'fast',
   pauseOnHover = true,
   className,
-}: {
-  items: {
-    href: string
-  }[]
-  direction?: 'left' | 'right'
-  speed?: 'fast' | 'normal' | 'slow'
-  pauseOnHover?: boolean
-  className?: string
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const containerRef = (null)
+  const scrollerRef = (null)
 
   useEffect(() => {
     addAnimation()

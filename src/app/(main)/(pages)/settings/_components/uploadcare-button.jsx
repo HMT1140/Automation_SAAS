@@ -3,20 +3,16 @@ import React, { useEffect, useRef } from "react";
 import * as LR from "@uploadcare/blocks";
 import { useRouter } from "next/navigation";
 
-type Props = {
-  onUpload: (e: string) => any;
-};
+
 
 LR.registerBlocks(LR);
 
-const UploadCareButton = ({ onUpload }: Props) => {
-  const router = useRouter();
-  const ctxProviderRef = useRef<
-    typeof LR.UploadCtxProvider.prototype & LR.UploadCtxProvider
-  >(null);
+const UploadCareButton = ({ onUpload }) => {
+  const router = useRouter()
+  const ctxProviderRef = useRef(null);
 
   useEffect(() => {
-    const handleUpload = async (e: any) => {
+    const handleUpload = async (e) => {
       const file = await onUpload(e.detail.cdnUrl);
       if (file) {
         router.refresh();

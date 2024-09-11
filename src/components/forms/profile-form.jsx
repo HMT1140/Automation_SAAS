@@ -17,12 +17,8 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { Loader2 } from 'lucide-react'
 
-type Props = {
-  user: any
-  onUpdate?: any
-}
 
-const ProfileForm = ({ user, onUpdate }: Props) => {
+const ProfileForm = ({ user, onUpdate }) => {
   const [isLoading, setIsLoading] = useState(false)
   const form = useForm<z.infer<typeof EditUserProfileSchema>>({
     mode: 'onChange',
@@ -34,7 +30,7 @@ const ProfileForm = ({ user, onUpdate }: Props) => {
   })
 
   const handleSubmit = async (
-    values: z.infer<typeof EditUserProfileSchema>
+    values
   ) => {
     setIsLoading(true)
     await onUpdate(values.name)
