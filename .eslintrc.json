@@ -1,0 +1,6 @@
+{
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": [
+    "./src/app/(main)/(pages)/settings/_components/uploadcare-button.tsx"
+  ]
+}
